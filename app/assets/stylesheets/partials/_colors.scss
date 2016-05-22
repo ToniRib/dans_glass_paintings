@@ -1,0 +1,14 @@
+// Colorado Logo Colors
+$colorado-red: #bb4b48;
+$colorado-blue: #266aa1;
+$colorado-yellow: #ddba37;
+$colorado-white: #cbcfd0;
+
+// Colorado Logo Colors Lightened
+$colorado-red-light: lighten($colorado-red, 10%);
+$colorado-blue-light: lighten($colorado-blue, 10%);
+$colorado-yellow-light: lighten($colorado-yellow, 10%);
+$colorado-white-light: lighten($colorado-white, 10%);
+
+// Main Colors
+$white: white;
