@@ -8,10 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <!-- Flash Notices -->
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
+
     <!-- Logo Image Row -->
     <div class="row">
       <div class="col-sm-12">
-        <img src="https://scontent.fsnc1-1.fna.fbcdn.net/t31.0-8/12471882_149291795447335_8262742486891559671_o.jpg" alt="Main Logo" class="center-block main-logo" />
+        <h1>Dan's Glass Paintings</h1>
       </div>
     </div>
 
