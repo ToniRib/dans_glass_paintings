@@ -4,7 +4,7 @@ class ContactController < ApplicationController
   end
 
   def create
-    ContactMailer.send_message(email_params)
+    ContactMailer.send_message(email_params).deliver_now
     redirect_to contact_path, notice: "Your message has been sent!"
   end
 

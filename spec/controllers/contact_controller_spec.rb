@@ -25,6 +25,7 @@ RSpec.describe ContactController do
     let(:name) { "Toni Rib" }
     let(:email) { "toni@example.com" }
     let(:message) { "New Painting" }
+    let(:mock_mailer) { instance_double(ActionMailer::MessageDelivery) }
 
     it "redirects to the contact show page" do
       post :create, name: name, email: email, message: message
@@ -42,11 +43,9 @@ RSpec.describe ContactController do
       expect(ContactMailer)
         .to receive(:send_message)
         .with(name: name, email: email, message: message)
+        .and_return(mock_mailer)
+      expect(mock_mailer).to receive(:deliver_now)
 
-      post :create, name: name, email: email, message: message
-    end
-
-    it "sends an email" do
       post :create, name: name, email: email, message: message
     end
   end
